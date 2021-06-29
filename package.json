@@ -4,18 +4,12 @@
   "description": "take quick notes",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.17.1",
+    "uuidv4": "^6.2.10"
   },
- "scripts": {
+  "scripts": {
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4",
-    "uuidv4": "^6.2.10"
-  }
-
-
+  "license": "ISC"
 }
-

@@ -12,8 +12,8 @@ app.use(express.json());
 
 // Use public folder
 app.use(express.static('public'));
-require('./routes/apiRoutes')(app);
-require('./routes/htmlRoutes')(app);
+require('./Develop/routes/apiRoutes')(app);
+require('./Develop/routes/htmlRoutes')(app);
 
 
 

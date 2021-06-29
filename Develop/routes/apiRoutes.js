@@ -28,13 +28,13 @@ module.exports = function (app) {
         newNote.id = uuidv4();
 
         // Read data from 'db.json' file
-        let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+        let data = JSON.parse(fs.readFileSync("db/db.json", "utf8"));
     
         // Pushed new note in notes file 'db.json'
         data.push(newNote);
 
         // Written notes data to 'db.json' file
-        fs.writeFileSync('./db/db.json', JSON.stringify(data));
+        fs.writeFileSync('db/db.json', JSON.stringify(data));
         
 
         // Send response

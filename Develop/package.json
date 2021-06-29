@@ -12,4 +12,12 @@
     "express": "^4.16.4",
     "uuidv4": "^6.2.10"
   }
+  {
+    "name": "myapp",
+    "description": "a really cool app",
+    "version": "1.0.0",
+    "engines": {
+      "node": "14.17.0"
+    }
+  }
 }

@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = require("path");
 
 // npm package 'uuid' for primary key
 const { v4: uuidv4 } = require('uuid');
@@ -29,7 +28,7 @@ module.exports = function (app) {
         newNote.id = uuidv4();
 
         // Read data from 'db.json' file
-        let data = JSON.parse(fs.readFileSync((path.join(__dirname, "../db/db.json", "utf8"));
+        let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     
         // Pushed new note in notes file 'db.json'
         data.push(newNote);

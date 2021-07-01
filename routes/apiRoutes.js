@@ -9,11 +9,11 @@ module.exports = function (app) {
     // API GET Request
     app.get("/api/notes", (request, response) => {
         
-        // Read 'db.json' file 
+        // Read db.json  
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
         
         
-        // Send read data to response of 'GET' request
+        
         response.json(data);
     });
 
@@ -27,17 +27,17 @@ module.exports = function (app) {
         // use uuid to create a primary key
         newNote.id = uuidv4();
 
-        // Read data from 'db.json' file
+        // Read data db.json
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
     
-        // Pushed new note in notes file 'db.json'
+        // pushing new note
         data.push(newNote);
 
-        // Written notes data to 'db.json' file
+        // Write notes to db.json
         fs.writeFileSync('./db/db.json', JSON.stringify(data));
         
 
-        // Send response
+        
         response.json(data);
     });
 
@@ -45,17 +45,17 @@ module.exports = function (app) {
     // API DELETE request
     app.delete("/api/notes/:id", (request, response) => {
 
-        // Fetched id to delete
+        // use id to delete
         let noteId = request.params.id.toString();
         
 
-        // Read data from 'db.json' file
+      
         let data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
 
         // filter data to get notes except the one to delete
         const newData = data.filter( note => note.id.toString() !== noteId );
 
-        // Write new data to 'db.json' file
+        // Write new data
         fs.writeFileSync('./db/db.json', JSON.stringify(newData));
         
 
